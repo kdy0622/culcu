@@ -375,6 +375,7 @@ function handleDelegatedClick(event: MouseEvent) {
 
 // --- Render function ---
 function render() {
+    const wasSearchFocused = document.activeElement && document.activeElement.id === 'search-input';
     let totalMemberPrice = 0;
     let totalAutoShipPrice = 0;
     let totalPoints = 0;
@@ -514,8 +515,8 @@ function render() {
     const searchInput = document.getElementById('search-input');
     if (searchInput) {
         searchInput.addEventListener('input', handleSearchInput);
-        // Set focus back to search input after render
-        if (document.activeElement !== searchInput) {
+        // Set focus back to search input only if it had focus before render
+        if (wasSearchFocused) {
             searchInput.focus();
             (searchInput as HTMLInputElement).selectionStart = (searchInput as HTMLInputElement).selectionEnd = searchTerm.length;
         }

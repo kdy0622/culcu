@@ -341,38 +341,61 @@ body {
   .main-header-sticky {
       padding: 0 0.5rem;
   }
+  .header {
+    padding-top: 0.5rem;
+  }
   .header h1 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+    margin-bottom: 0.1rem;
+  }
+  .subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  .header-controls-wrapper {
+    margin-bottom: 0.5rem;
   }
   .controls {
+    display: flex;
+    flex-wrap: nowrap; /* Keep on single line */
     gap: 0.25rem;
-    flex-wrap: wrap; /* Allow controls to wrap */
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
   }
   .btn {
-    font-size: 0.8rem;
-    padding: 0.5rem 0.6rem;
+    flex: 1;
+    font-size: 0.72rem;
+    padding: 0.45rem 0.25rem;
+    gap: 0.2rem;
   }
   .btn-manual {
-      flex-basis: 100%; /* Make manual button take full width */
-      order: -1; /* Move to top */
+      flex-basis: auto; /* Remove 100% width */
+      order: unset; /* Remove order change */
       margin-right: 0;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0;
   }
   .search-input {
       font-size: 0.9rem;
-      padding-top: 0.6rem;
-      padding-bottom: 0.6rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
   }
   .summary-container {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.35rem;
+    padding: 0.5rem 0;
   }
   .summary-card {
-      padding: 0.75rem;
+      padding: 0.4rem 0.2rem;
+  }
+  .summary-card h3 {
+      font-size: 0.72rem;
+      margin-bottom: 0.25rem;
+      word-break: keep-all;
   }
   .summary-card p {
-      font-size: 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 700;
   }
   .product-list-container {
       margin: 1rem 0.5rem;
